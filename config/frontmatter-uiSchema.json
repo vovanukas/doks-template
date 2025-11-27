@@ -1,0 +1,219 @@
+{
+  "ui:order": [
+    "title",
+    "description",
+    "summary",
+    "lead",
+    "type",
+    "date",
+    "lastmod",
+    "draft",
+    "weight",
+    "toc",
+    "categories",
+    "tags",
+    "contributors",
+    "pinned",
+    "homepage",
+    "images",
+    "seo",
+    "headline",
+    "avatar",
+    "exclude_search",
+    "sitemap_exclude",
+    "aliases",
+    "layout",
+    "outputs",
+    "cascade",
+    "resources"
+  ],
+  "title": {
+    "ui:autofocus": true,
+    "ui:placeholder": "Enter page title..."
+  },
+  "description": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Brief description for SEO and metadata...",
+    "ui:options": {
+      "rows": 2
+    },
+    "ui:help": "Shown in search results and social media previews"
+  },
+  "summary": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Short summary for card displays...",
+    "ui:options": {
+      "rows": 3
+    },
+    "ui:help": "Displayed on list pages and in blog cards"
+  },
+  "lead": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Lead paragraph (supports HTML)...",
+    "ui:options": {
+      "rows": 2
+    },
+    "ui:help": "Prominently displayed below the title on the page"
+  },
+  "date": {
+    "ui:widget": "datetime",
+    "ui:help": "Publication date in ISO 8601 format"
+  },
+  "lastmod": {
+    "ui:widget": "datetime",
+    "ui:help": "Last modification date in ISO 8601 format"
+  },
+  "draft": {
+    "ui:widget": "radio",
+    "ui:help": "Draft pages are not published in production"
+  },
+  "weight": {
+    "ui:widget": "updown",
+    "ui:help": "Lower numbers appear first in navigation and lists"
+  },
+  "toc": {
+    "ui:widget": "radio",
+    "ui:help": "Show/hide table of contents for this page (docs pages)"
+  },
+  "type": {
+    "ui:widget": "select",
+    "ui:placeholder": "Select content type...",
+    "ui:help": "Determines which layout template Hugo uses for this page"
+  },
+  "categories": {
+    "ui:options": {
+      "orderable": true
+    },
+    "items": {
+      "ui:placeholder": "Enter category name"
+    },
+    "ui:help": "Used primarily for blog posts to organize content"
+  },
+  "tags": {
+    "ui:options": {
+      "orderable": true
+    },
+    "items": {
+      "ui:placeholder": "Enter tag name"
+    },
+    "ui:help": "Keywords for categorizing and finding content"
+  },
+  "contributors": {
+    "ui:options": {
+      "orderable": true
+    },
+    "items": {
+      "ui:placeholder": "Contributor name"
+    },
+    "ui:help": "Names should match contributor taxonomy terms"
+  },
+  "pinned": {
+    "ui:widget": "checkbox",
+    "ui:help": "Pin this post to the top of blog listings"
+  },
+  "homepage": {
+    "ui:widget": "checkbox",
+    "ui:help": "Feature this content on the site homepage"
+  },
+  "headline": {
+    "ui:placeholder": "Alternative headline text...",
+    "ui:help": "Used instead of title on taxonomy and list pages"
+  },
+  "avatar": {
+    "ui:placeholder": "avatar.jpg",
+    "ui:help": "Image filename from page bundle (for contributor pages)"
+  },
+  "exclude_search": {
+    "ui:widget": "checkbox",
+    "ui:help": "Exclude this page from FlexSearch indexing"
+  },
+  "sitemap_exclude": {
+    "ui:widget": "checkbox",
+    "ui:help": "Exclude this page from sitemap.xml"
+  },
+  "seo": {
+    "ui:order": [
+      "title",
+      "description",
+      "canonical",
+      "noindex"
+    ],
+    "ui:description": "Override default SEO settings for this page",
+    "title": {
+      "ui:placeholder": "Custom SEO title...",
+      "ui:help": "Leave empty to use page title"
+    },
+    "description": {
+      "ui:widget": "textarea",
+      "ui:placeholder": "Custom meta description...",
+      "ui:options": {
+        "rows": 2
+      },
+      "ui:help": "Recommended: 150-160 characters"
+    },
+    "canonical": {
+      "ui:placeholder": "https://example.com/canonical-url/",
+      "ui:help": "Only set if content is duplicated elsewhere"
+    },
+    "noindex": {
+      "ui:widget": "radio",
+      "ui:help": "Prevent search engines from indexing this page"
+    }
+  },
+  "images": {
+    "ui:options": {
+      "orderable": true
+    },
+    "items": {
+      "ui:placeholder": "images/feature.jpg"
+    },
+    "ui:help": "Images for Open Graph and Twitter Card previews"
+  },
+  "aliases": {
+    "ui:options": {
+      "orderable": true
+    },
+    "items": {
+      "ui:placeholder": "/old-url/"
+    },
+    "ui:help": "Old URLs that should redirect to this page"
+  },
+  "layout": {
+    "ui:placeholder": "single",
+    "ui:help": "Custom layout template (advanced users only)"
+  },
+  "outputs": {
+    "ui:widget": "checkboxes",
+    "ui:help": "Select which output formats to generate"
+  },
+  "cascade": {
+    "ui:widget": "textarea",
+    "ui:options": {
+      "rows": 4
+    },
+    "ui:help": "Advanced: YAML object for cascading settings to child pages"
+  },
+  "resources": {
+    "ui:help": "Configure page bundle resources (advanced)",
+    "items": {
+      "src": {
+        "ui:placeholder": "*.jpg"
+      },
+      "name": {
+        "ui:placeholder": "header"
+      },
+      "title": {
+        "ui:placeholder": "Header Image"
+      },
+      "params": {
+        "ui:widget": "textarea",
+        "ui:options": {
+          "rows": 2
+        }
+      }
+    }
+  }
+}
+
+
+

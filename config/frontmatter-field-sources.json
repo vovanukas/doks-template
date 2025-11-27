@@ -1,0 +1,453 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Doks Frontmatter Field Sources",
+  "description": "Documentation of where each frontmatter field is used in the Doks theme",
+  "version": "1.0.0",
+  "generatedDate": "2024-11-06",
+  "fields": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "usedIn": [
+        "All layouts",
+        "Navigation menus",
+        "Page headers",
+        "SEO meta tags"
+      ],
+      "sources": [
+        "content/_index.md",
+        "node_modules/@thulite/doks-core/archetypes/blog.md",
+        "node_modules/@thulite/doks-core/archetypes/docs.md",
+        "node_modules/@thulite/doks-core/layouts/blog/list.html"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "required": false,
+      "usedIn": [
+        "Meta tags",
+        "SEO",
+        "Open Graph"
+      ],
+      "sources": [
+        "content/_index.md",
+        "node_modules/@thulite/doks-core/archetypes/blog.md",
+        "node_modules/@thulite/doks-core/archetypes/docs.md"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "required": false,
+      "usedIn": [
+        "Blog post cards",
+        "List pages",
+        "Search results"
+      ],
+      "sources": [
+        "content/blog/example/index.md",
+        "node_modules/@thulite/doks-core/layouts/blog/single.html",
+        "node_modules/@thulite/doks-core/layouts/term.html"
+      ],
+      "layoutReferences": [
+        "node_modules/@thulite/doks-core/layouts/term.html:21",
+        "node_modules/@thulite/doks-core/layouts/blog/single.html:26"
+      ]
+    },
+    "lead": {
+      "type": "string",
+      "required": false,
+      "usedIn": [
+        "Homepage",
+        "Section pages",
+        "Below page title"
+      ],
+      "sources": [
+        "content/_index.md",
+        "node_modules/@thulite/doks-core/layouts/home.html"
+      ],
+      "layoutReferences": [
+        "node_modules/@thulite/doks-core/layouts/home.html:8",
+        "node_modules/@thulite/doks-core/layouts/versions.html:4"
+      ]
+    },
+    "date": {
+      "type": "datetime",
+      "required": false,
+      "usedIn": [
+        "Blog post metadata",
+        "Sorting",
+        "Search index"
+      ],
+      "sources": [
+        "node_modules/@thulite/doks-core/archetypes/blog.md",
+        "node_modules/@thulite/doks-core/layouts/home.searchindex.json"
+      ]
+    },
+    "lastmod": {
+      "type": "datetime",
+      "required": false,
+      "usedIn": [
+        "Last modified display",
+        "Sitemap",
+        "Page footer"
+      ],
+      "sources": [
+        "node_modules/@thulite/doks-core/archetypes/blog.md",
+        "node_modules/@thulite/doks-core/layouts/_partials/main/last-modified.html"
+      ],
+      "requiresSiteConfig": "site.Params.doks.lastMod must be true"
+    },
+    "draft": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "usedIn": [
+        "Build process",
+        "Hugo determines if page is published"
+      ],
+      "sources": [
+        "node_modules/@thulite/doks-core/archetypes/blog.md",
+        "content/_index.md"
+      ]
+    },
+    "weight": {
+      "type": "integer",
+      "required": false,
+      "default": 999,
+      "usedIn": [
+        "Navigation order",
+        "Section sorting",
+        "Menu order"
+      ],
+      "sources": [
+        "content/blog/_index.md",
+        "node_modules/@thulite/doks-core/archetypes/blog.md",
+        "node_modules/@thulite/doks-core/archetypes/docs.md"
+      ],
+      "notes": "Lower numbers appear first"
+    },
+    "toc": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "usedIn": [
+        "Table of contents sidebar",
+        "Documentation pages"
+      ],
+      "sources": [
+        "content/docs/_index.md",
+        "node_modules/@thulite/doks-core/archetypes/docs.md",
+        "node_modules/@thulite/doks-core/layouts/single.html"
+      ],
+      "layoutReferences": [
+        "node_modules/@thulite/doks-core/layouts/single.html:11",
+        "node_modules/@thulite/doks-core/layouts/single.html:16",
+        "node_modules/@thulite/doks-core/layouts/single.html:32"
+      ],
+      "requiresSiteConfig": "Only shown in sections defined in site.Params.doks.sectionNav"
+    },
+    "categories": {
+      "type": "array",
+      "required": false,
+      "default": [],
+      "usedIn": [
+        "Blog post metadata",
+        "Taxonomy pages",
+        "Post categorization"
+      ],
+      "sources": [
+        "content/blog/_index.md",
+        "node_modules/@thulite/doks-core/archetypes/blog.md",
+        "node_modules/@thulite/doks-core/layouts/_partials/main/blog-meta.html"
+      ],
+      "layoutReferences": [
+        "node_modules/@thulite/doks-core/layouts/_partials/main/blog-meta.html:5"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "required": false,
+      "default": [],
+      "usedIn": [
+        "Blog post metadata",
+        "Tag pages",
+        "Search index",
+        "Post footer"
+      ],
+      "sources": [
+        "content/blog/example/index.md",
+        "node_modules/@thulite/doks-core/archetypes/blog.md",
+        "node_modules/@thulite/doks-core/layouts/blog/single.html"
+      ],
+      "layoutReferences": [
+        "node_modules/@thulite/doks-core/layouts/blog/single.html:28-31",
+        "node_modules/@thulite/doks-core/layouts/home.searchindex.json:14"
+      ]
+    },
+    "contributors": {
+      "type": "array",
+      "required": false,
+      "default": [],
+      "usedIn": [
+        "Blog post byline",
+        "Author links",
+        "Contributor pages"
+      ],
+      "sources": [
+        "content/blog/example/index.md",
+        "node_modules/@thulite/doks-core/archetypes/blog.md",
+        "node_modules/@thulite/doks-core/layouts/_partials/main/blog-meta.html"
+      ],
+      "layoutReferences": [
+        "node_modules/@thulite/doks-core/layouts/_partials/main/blog-meta.html:1",
+        "node_modules/@thulite/doks-core/layouts/_partials/main/blog-meta.html:12-26"
+      ],
+      "notes": "Names should match contributor taxonomy terms"
+    },
+    "pinned": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "usedIn": [
+        "Blog post sorting",
+        "Featured posts"
+      ],
+      "sources": [
+        "content/blog/_index.md",
+        "node_modules/@thulite/doks-core/archetypes/blog.md"
+      ],
+      "notes": "Pins post to top of blog listings"
+    },
+    "homepage": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "usedIn": [
+        "Homepage queries",
+        "Featured content"
+      ],
+      "sources": [
+        "content/blog/_index.md",
+        "node_modules/@thulite/doks-core/archetypes/blog.md"
+      ],
+      "notes": "Shows content on homepage"
+    },
+    "headline": {
+      "type": "string",
+      "required": false,
+      "usedIn": [
+        "Taxonomy term pages",
+        "List pages",
+        "Alternative to title"
+      ],
+      "sources": [],
+      "layoutReferences": [
+        "node_modules/@thulite/doks-core/layouts/term.html:15",
+        "node_modules/@thulite/doks-core/layouts/blog/list.html:12"
+      ],
+      "notes": "Used instead of title on taxonomy and list pages"
+    },
+    "avatar": {
+      "type": "string",
+      "required": false,
+      "usedIn": [
+        "Contributor pages",
+        "Author profiles",
+        "Blog post bylines"
+      ],
+      "sources": [],
+      "layoutReferences": [
+        "node_modules/@thulite/doks-core/layouts/term.html:5-10",
+        "node_modules/@thulite/doks-core/layouts/blog/list.html:4-11",
+        "node_modules/@thulite/doks-core/layouts/_partials/main/blog-meta.html:17-22"
+      ],
+      "notes": "Filename of avatar image in page bundle"
+    },
+    "exclude_search": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "usedIn": [
+        "Search indexing",
+        "FlexSearch configuration"
+      ],
+      "sources": [],
+      "layoutReferences": [
+        "node_modules/@thulite/doks-core/layouts/home.searchindex.json:1"
+      ],
+      "notes": "Excludes page from FlexSearch index"
+    },
+    "sitemap_exclude": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "usedIn": [
+        "Sitemap generation"
+      ],
+      "sources": [],
+      "layoutReferences": [
+        "node_modules/@thulite/doks-core/layouts/section.sitemap.xml:5",
+        "node_modules/@thulite/doks-core/layouts/section.sitemap.xml:26"
+      ],
+      "notes": "Excludes page from sitemap.xml"
+    },
+    "seo": {
+      "type": "object",
+      "required": false,
+      "usedIn": [
+        "SEO meta tags",
+        "Open Graph",
+        "Twitter Cards"
+      ],
+      "sources": [
+        "content/_index.md",
+        "node_modules/@thulite/doks-core/archetypes/blog.md",
+        "node_modules/@thulite/doks-core/archetypes/docs.md"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Custom SEO title override"
+        },
+        "description": {
+          "type": "string",
+          "description": "Custom meta description",
+          "maxLength": 160
+        },
+        "canonical": {
+          "type": "string",
+          "description": "Canonical URL"
+        },
+        "noindex": {
+          "type": "boolean",
+          "description": "Prevent search engine indexing",
+          "default": false
+        }
+      }
+    },
+    "type": {
+      "type": "string",
+      "required": false,
+      "usedIn": [
+        "Layout selection",
+        "Content type routing"
+      ],
+      "sources": [
+        "content/privacy.md"
+      ],
+      "examples": ["docs", "blog", "legal", "about"],
+      "notes": "Determines which layout template Hugo uses"
+    },
+    "images": {
+      "type": "array",
+      "required": false,
+      "usedIn": [
+        "Social media sharing",
+        "Open Graph",
+        "Twitter Cards"
+      ],
+      "sources": [],
+      "notes": "Images for social media previews"
+    },
+    "aliases": {
+      "type": "array",
+      "required": false,
+      "usedIn": [
+        "URL redirects",
+        "Hugo alias system"
+      ],
+      "sources": [],
+      "notes": "Old URLs that redirect to this page"
+    },
+    "layout": {
+      "type": "string",
+      "required": false,
+      "usedIn": [
+        "Layout template selection"
+      ],
+      "sources": [],
+      "examples": ["single", "list", "home"],
+      "notes": "Custom layout template override"
+    },
+    "outputs": {
+      "type": "array",
+      "required": false,
+      "usedIn": [
+        "Output format generation"
+      ],
+      "sources": [],
+      "examples": [["html", "json", "rss"]],
+      "notes": "Which output formats to generate"
+    },
+    "cascade": {
+      "type": "object",
+      "required": false,
+      "usedIn": [
+        "Cascading frontmatter to children"
+      ],
+      "sources": [],
+      "notes": "Settings cascaded to descendant pages"
+    },
+    "resources": {
+      "type": "array",
+      "required": false,
+      "usedIn": [
+        "Page bundle resource configuration"
+      ],
+      "sources": [],
+      "notes": "Configure page resources (images, files)"
+    }
+  },
+  "themeSpecificBehavior": {
+    "toc": {
+      "condition": "Only displayed in sections defined in site.Params.doks.sectionNav",
+      "defaultSections": ["docs"]
+    },
+    "lastmod": {
+      "condition": "Only displayed if site.Params.doks.lastMod is true"
+    },
+    "editPage": {
+      "condition": "Edit links only shown if site.Params.doks.editPage is true"
+    },
+    "relatedPosts": {
+      "condition": "Related posts shown if site.Params.doks.relatedPosts is true"
+    },
+    "imageList": {
+      "condition": "Featured images in lists shown if site.Params.doks.imageList is true"
+    },
+    "imageSingle": {
+      "condition": "Featured images on single pages shown if site.Params.doks.imageSingle is true"
+    },
+    "searchExclusion": {
+      "respects": [
+        "site.Params.doks.searchExclKinds",
+        "site.Params.doks.searchExclTypes"
+      ]
+    }
+  },
+  "analysisMethod": {
+    "contentFiles": [
+      "content/_index.md",
+      "content/blog/_index.md",
+      "content/blog/example/index.md",
+      "content/docs/_index.md",
+      "content/docs/guides/example.md",
+      "content/docs/reference/example.md",
+      "content/privacy.md"
+    ],
+    "archetypes": [
+      "node_modules/@thulite/doks-core/archetypes/blog.md",
+      "node_modules/@thulite/doks-core/archetypes/default.md",
+      "node_modules/@thulite/doks-core/archetypes/docs.md",
+      "node_modules/@thulite/doks-core/archetypes/docs/_index.md"
+    ],
+    "layoutsSearched": [
+      "node_modules/@thulite/doks-core/layouts/**/*.html"
+    ],
+    "searchPattern": "\\.Params\\.",
+    "date": "2024-11-06"
+  }
+}
+
+
+

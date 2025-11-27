@@ -1,0 +1,139 @@
+{
+  "ui:order": [
+    "title",
+    "summary",
+    "description",
+    "date",
+    "lastmod",
+    "draft",
+    "categories",
+    "tags",
+    "contributors",
+    "weight",
+    "pinned",
+    "homepage",
+    "images",
+    "exclude_search",
+    "seo"
+  ],
+  "title": {
+    "ui:autofocus": true,
+    "ui:placeholder": "Enter your blog post title..."
+  },
+  "description": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Meta description for SEO...",
+    "ui:options": {
+      "rows": 2
+    },
+    "ui:help": "Used in search results and social previews"
+  },
+  "summary": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Write a compelling summary of your post...",
+    "ui:options": {
+      "rows": 3
+    },
+    "ui:help": "Displayed in blog listings and cards"
+  },
+  "date": {
+    "ui:widget": "datetime",
+    "ui:help": "When this post was first published"
+  },
+  "lastmod": {
+    "ui:widget": "datetime",
+    "ui:help": "When this post was last updated"
+  },
+  "draft": {
+    "ui:widget": "radio",
+    "ui:help": "Set to false to publish"
+  },
+  "weight": {
+    "ui:widget": "updown",
+    "ui:help": "Lower numbers appear first in listings"
+  },
+  "categories": {
+    "ui:options": {
+      "orderable": true,
+      "addable": true,
+      "removable": true
+    },
+    "items": {
+      "ui:placeholder": "Category name"
+    },
+    "ui:help": "Main categories for organizing blog posts"
+  },
+  "tags": {
+    "ui:options": {
+      "orderable": true,
+      "addable": true,
+      "removable": true
+    },
+    "items": {
+      "ui:placeholder": "Tag name"
+    },
+    "ui:help": "Keywords for content discovery"
+  },
+  "contributors": {
+    "ui:options": {
+      "orderable": true,
+      "addable": true,
+      "removable": true
+    },
+    "items": {
+      "ui:placeholder": "Author name"
+    },
+    "ui:help": "Post authors (should match contributor taxonomy)"
+  },
+  "pinned": {
+    "ui:widget": "checkbox",
+    "ui:help": "Keep this post at the top of listings"
+  },
+  "homepage": {
+    "ui:widget": "checkbox",
+    "ui:help": "Feature this post on the homepage"
+  },
+  "images": {
+    "ui:options": {
+      "orderable": true
+    },
+    "items": {
+      "ui:placeholder": "feature-image.jpg or https://example.com/image.jpg"
+    },
+    "ui:help": "Featured image(s) for social sharing (Open Graph, Twitter)"
+  },
+  "exclude_search": {
+    "ui:widget": "checkbox",
+    "ui:help": "Hide from search results"
+  },
+  "seo": {
+    "ui:order": ["title", "description", "canonical", "noindex"],
+    "ui:description": "Override default SEO settings",
+    "ui:options": {
+      "collapsed": true
+    },
+    "title": {
+      "ui:placeholder": "Custom SEO title (optional)...",
+      "ui:help": "Leave empty to use post title"
+    },
+    "description": {
+      "ui:widget": "textarea",
+      "ui:placeholder": "Custom meta description...",
+      "ui:options": {
+        "rows": 2
+      },
+      "ui:help": "Aim for 150-160 characters"
+    },
+    "canonical": {
+      "ui:placeholder": "https://example.com/original-url/",
+      "ui:help": "Set only if republishing content from another source"
+    },
+    "noindex": {
+      "ui:widget": "radio",
+      "ui:help": "Prevent search engines from indexing"
+    }
+  }
+}
+
+
+

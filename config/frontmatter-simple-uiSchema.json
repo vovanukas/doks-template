@@ -1,0 +1,63 @@
+{
+  "ui:order": ["title", "description", "summary", "date", "lastmod", "draft", "weight", "toc", "seo"],
+  "title": {
+    "ui:autofocus": true,
+    "ui:placeholder": "Page title"
+  },
+  "description": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Brief description for SEO",
+    "ui:options": {
+      "rows": 2
+    }
+  },
+  "summary": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Summary for cards and lists",
+    "ui:options": {
+      "rows": 2
+    }
+  },
+  "date": {
+    "ui:widget": "datetime"
+  },
+  "lastmod": {
+    "ui:widget": "datetime"
+  },
+  "draft": {
+    "ui:widget": "checkbox"
+  },
+  "weight": {
+    "ui:widget": "updown",
+    "ui:help": "Lower numbers appear first"
+  },
+  "toc": {
+    "ui:widget": "checkbox",
+    "ui:help": "Show table of contents (docs pages)"
+  },
+  "seo": {
+    "ui:order": ["title", "description", "canonical", "noindex"],
+    "ui:options": {
+      "collapsed": true
+    },
+    "title": {
+      "ui:placeholder": "Leave empty to use page title"
+    },
+    "description": {
+      "ui:widget": "textarea",
+      "ui:placeholder": "Custom meta description",
+      "ui:options": {
+        "rows": 2
+      }
+    },
+    "canonical": {
+      "ui:placeholder": "https://example.com/"
+    },
+    "noindex": {
+      "ui:widget": "checkbox"
+    }
+  }
+}
+
+
+

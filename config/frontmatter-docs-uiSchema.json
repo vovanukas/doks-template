@@ -1,0 +1,112 @@
+{
+  "ui:order": [
+    "title",
+    "description",
+    "summary",
+    "lead",
+    "weight",
+    "toc",
+    "date",
+    "lastmod",
+    "draft",
+    "aliases",
+    "exclude_search",
+    "sitemap_exclude",
+    "seo"
+  ],
+  "title": {
+    "ui:autofocus": true,
+    "ui:placeholder": "Documentation page title..."
+  },
+  "description": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Brief description of this documentation page...",
+    "ui:options": {
+      "rows": 2
+    },
+    "ui:help": "Used for SEO and search results"
+  },
+  "summary": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Short summary for navigation and previews...",
+    "ui:options": {
+      "rows": 2
+    },
+    "ui:help": "Shown in section navigation and lists"
+  },
+  "lead": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Introductory paragraph for this page...",
+    "ui:options": {
+      "rows": 2
+    },
+    "ui:help": "Displayed prominently below the title"
+  },
+  "weight": {
+    "ui:widget": "updown",
+    "ui:help": "Controls order in navigation (lower = appears first)"
+  },
+  "toc": {
+    "ui:widget": "radio",
+    "ui:help": "Show/hide right sidebar table of contents"
+  },
+  "date": {
+    "ui:widget": "datetime",
+    "ui:help": "Creation date (usually auto-generated)"
+  },
+  "lastmod": {
+    "ui:widget": "datetime",
+    "ui:help": "Last modification date"
+  },
+  "draft": {
+    "ui:widget": "radio",
+    "ui:help": "Mark as draft to hide from production"
+  },
+  "aliases": {
+    "ui:options": {
+      "orderable": true
+    },
+    "items": {
+      "ui:placeholder": "/old-docs-url/"
+    },
+    "ui:help": "Previous URLs that should redirect here"
+  },
+  "exclude_search": {
+    "ui:widget": "checkbox",
+    "ui:help": "Exclude from site search"
+  },
+  "sitemap_exclude": {
+    "ui:widget": "checkbox",
+    "ui:help": "Exclude from XML sitemap"
+  },
+  "seo": {
+    "ui:order": ["title", "description", "canonical", "noindex"],
+    "ui:description": "Override default SEO settings for this page",
+    "ui:options": {
+      "collapsed": true
+    },
+    "title": {
+      "ui:placeholder": "Custom SEO title...",
+      "ui:help": "Leave empty to use page title"
+    },
+    "description": {
+      "ui:widget": "textarea",
+      "ui:placeholder": "Custom meta description...",
+      "ui:options": {
+        "rows": 2
+      },
+      "ui:help": "Recommended: 150-160 characters"
+    },
+    "canonical": {
+      "ui:placeholder": "https://example.com/canonical-url/",
+      "ui:help": "Only set if content is duplicated elsewhere"
+    },
+    "noindex": {
+      "ui:widget": "radio",
+      "ui:help": "Prevent search engines from indexing"
+    }
+  }
+}
+
+
+

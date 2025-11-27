@@ -1,0 +1,263 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Doks Page Frontmatter (Unified)",
+  "description": "Unified frontmatter schema for all Doks content types",
+  "required": ["title"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Page Title",
+      "description": "The main title of your page",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "Brief description for SEO and metadata"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Summary",
+      "description": "Short summary for list pages and cards"
+    },
+    "date": {
+      "type": "string",
+      "title": "Publication Date",
+      "description": "When the page was published",
+      "format": "date-time"
+    },
+    "lastmod": {
+      "type": "string",
+      "title": "Last Modified",
+      "description": "When the page was last updated",
+      "format": "date-time"
+    },
+    "draft": {
+      "type": "boolean",
+      "title": "Draft Status",
+      "description": "If true, page won't be published in production",
+      "default": false
+    },
+    "basicSettings": {
+      "type": "object",
+      "title": "Basic Settings",
+      "description": "Common settings for all content types",
+      "properties": {
+        "weight": {
+          "type": "integer",
+          "title": "Sort Weight",
+          "description": "Order weight (lower = first)",
+          "default": 999,
+          "minimum": 1,
+          "maximum": 9999
+        },
+        "type": {
+          "type": "string",
+          "title": "Content Type",
+          "description": "Hugo content type (affects layout)",
+          "enum": ["", "docs", "blog", "legal", "about"]
+        },
+        "lead": {
+          "type": "string",
+          "title": "Lead Text",
+          "description": "Intro paragraph (supports HTML)"
+        }
+      }
+    },
+    "blogSettings": {
+      "type": "object",
+      "title": "Blog Post Settings",
+      "description": "Settings for blog posts (leave empty if not a blog post)",
+      "properties": {
+        "categories": {
+          "type": "array",
+          "title": "Categories",
+          "description": "Blog post categories",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "default": []
+        },
+        "tags": {
+          "type": "array",
+          "title": "Tags",
+          "description": "Blog post tags",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "default": []
+        },
+        "contributors": {
+          "type": "array",
+          "title": "Contributors",
+          "description": "Author names",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "default": []
+        },
+        "pinned": {
+          "type": "boolean",
+          "title": "Pin Post",
+          "description": "Pin to top of blog listings",
+          "default": false
+        },
+        "homepage": {
+          "type": "boolean",
+          "title": "Show on Homepage",
+          "description": "Feature on homepage",
+          "default": false
+        },
+        "images": {
+          "type": "array",
+          "title": "Featured Images",
+          "description": "Images for social sharing",
+          "items": {
+            "type": "string",
+            "pattern": "^.*\\.(jpg|jpeg|png|webp|gif)$"
+          }
+        }
+      }
+    },
+    "docsSettings": {
+      "type": "object",
+      "title": "Documentation Settings",
+      "description": "Settings for documentation pages",
+      "properties": {
+        "toc": {
+          "type": "boolean",
+          "title": "Table of Contents",
+          "description": "Show TOC sidebar",
+          "default": true
+        },
+        "aliases": {
+          "type": "array",
+          "title": "URL Aliases",
+          "description": "URLs that redirect here",
+          "items": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "seoSettings": {
+      "type": "object",
+      "title": "SEO & Search Settings",
+      "description": "Control SEO and search visibility",
+      "properties": {
+        "seo": {
+          "type": "object",
+          "title": "SEO Overrides",
+          "description": "Custom SEO settings",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Custom SEO Title",
+              "description": "Override page title for SEO"
+            },
+            "description": {
+              "type": "string",
+              "title": "Meta Description",
+              "description": "Custom meta description",
+              "maxLength": 160
+            },
+            "canonical": {
+              "type": "string",
+              "title": "Canonical URL",
+              "description": "Canonical URL",
+              "format": "uri"
+            },
+            "noindex": {
+              "type": "boolean",
+              "title": "No Index",
+              "description": "Prevent indexing",
+              "default": false
+            }
+          }
+        },
+        "exclude_search": {
+          "type": "boolean",
+          "title": "Exclude from Search",
+          "description": "Hide from site search",
+          "default": false
+        },
+        "sitemap_exclude": {
+          "type": "boolean",
+          "title": "Exclude from Sitemap",
+          "description": "Hide from sitemap.xml",
+          "default": false
+        }
+      }
+    },
+    "advancedSettings": {
+      "type": "object",
+      "title": "Advanced Settings",
+      "description": "Advanced Hugo features",
+      "properties": {
+        "headline": {
+          "type": "string",
+          "title": "Alternative Headline",
+          "description": "Used on taxonomy/list pages"
+        },
+        "avatar": {
+          "type": "string",
+          "title": "Avatar Image",
+          "description": "Avatar filename (contributor pages)",
+          "pattern": "^[^/]+\\.(jpg|jpeg|png|webp|gif)$"
+        },
+        "layout": {
+          "type": "string",
+          "title": "Custom Layout",
+          "description": "Layout template override"
+        },
+        "outputs": {
+          "type": "array",
+          "title": "Output Formats",
+          "description": "Which formats to generate",
+          "items": {
+            "type": "string",
+            "enum": ["html", "json", "rss", "amp"]
+          },
+          "uniqueItems": true
+        },
+        "cascade": {
+          "type": "object",
+          "title": "Cascade Settings",
+          "description": "Settings to cascade to children",
+          "additionalProperties": true
+        },
+        "resources": {
+          "type": "array",
+          "title": "Page Resources",
+          "description": "Configure page bundle resources",
+          "items": {
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string",
+                "title": "Source Pattern"
+              },
+              "name": {
+                "type": "string",
+                "title": "Resource Name"
+              },
+              "title": {
+                "type": "string",
+                "title": "Resource Title"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

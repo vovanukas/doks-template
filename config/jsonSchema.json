@@ -1,0 +1,736 @@
+{
+    "type": "object",
+    "title": "Doks Theme Settings",
+    "properties": {
+      "_preserved": {
+        "type": "object",
+        "title": "Technical Configuration (Hidden)",
+        "properties": {
+          "config/_default/module.toml/mounts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source": {"type": "string"},
+                "target": {"type": "string"},
+                "excludeFiles": {"type": "string"}
+              }
+            },
+            "title": "Module Mounts"
+          },
+          "config/_default/hugo.toml/disableKinds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Disabled Content Kinds"
+          },
+          "config/_default/markup.toml/goldmark.parser.attribute.block": {
+            "type": "boolean",
+            "default": true,
+            "title": "Goldmark Block Attributes"
+          },
+          "config/_default/markup.toml/goldmark.parser.attribute.title": {
+            "type": "boolean",
+            "default": true,
+            "title": "Goldmark Title Attributes"
+          },
+          "config/_default/markup.toml/goldmark.renderer.unsafe": {
+            "type": "boolean",
+            "default": true,
+            "title": "Goldmark Unsafe Rendering"
+          },
+          "config/_default/markup.toml/highlight.noClasses": {
+            "type": "boolean",
+            "default": false,
+            "title": "Syntax Highlighting Classes"
+          },
+          "config/_default/hugo.toml/rssLimit": {
+            "type": "integer",
+            "default": 10,
+            "title": "RSS Feed Limit"
+          },
+          "config/_default/hugo.toml/enableGitInfo": {
+            "type": "boolean",
+            "default": false,
+            "title": "Enable Git Info"
+          },
+          "config/_default/hugo.toml/summarylength": {
+            "type": "integer",
+            "default": 20,
+            "title": "Summary Length"
+          },
+          "config/_default/hugo.toml/copyRight": {
+            "type": "string",
+            "title": "Copyright Notice"
+          },
+          "config/_default/hugo.toml/languageCode": {
+            "type": "string",
+            "default": "en-US",
+            "title": "Language Code"
+          },
+          "config/_default/hugo.toml/defaultContentLanguage": {
+            "type": "string",
+            "default": "en",
+            "title": "Default Content Language"
+          },
+          "config/_default/hugo.toml/defaultContentLanguageInSubdir": {
+            "type": "boolean",
+            "default": false,
+            "title": "Default Language in Subdirectory"
+          },
+          "config/_default/hugo.toml/disableAliases": {
+            "type": "boolean",
+            "default": true,
+            "title": "Disable Aliases"
+          },
+          "config/_default/hugo.toml/disableHugoGeneratorInject": {
+            "type": "boolean",
+            "default": true,
+            "title": "Disable Hugo Generator Meta Tag"
+          }
+        }
+      },
+      "general": {
+        "type": "object",
+        "title": "General Settings",
+        "properties": {
+          "config/_default/hugo.toml/title": {
+            "type": "string",
+            "title": "Site Title",
+            "description": "The main title of your documentation site",
+            "default": "Doks"
+          },
+          "config/_default/hugo.toml/baseurl": {
+            "type": "string",
+            "title": "Base URL",
+            "description": "The root URL of your site (e.g., https://example.com/)",
+            "format": "uri",
+            "examples": ["https://example.com/", "https://docs.myproject.io/"]
+          },
+          "config/_default/languages.toml/en.languageName": {
+            "type": "string",
+            "title": "Language Name",
+            "description": "Display name for the primary language",
+            "default": "English"
+          },
+          "config/_default/languages.toml/en.contentDir": {
+            "type": "string",
+            "title": "Content Directory",
+            "description": "Directory containing the language-specific content",
+            "default": "content"
+          },
+          "config/_default/languages.toml/en.weight": {
+            "type": "integer",
+            "title": "Language Weight",
+            "description": "Sort order for languages (lower numbers appear first)",
+            "default": 10,
+            "minimum": 1
+          },
+          "config/_default/params.toml/description": {
+            "type": "string",
+            "title": "Site Description",
+            "description": "Brief description of your documentation site for search engines and social sharing"
+          },
+          "config/_default/params.toml/mainSections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Main Content Sections",
+            "description": "Primary sections of your site",
+            "default": ["docs"]
+          },
+          "config/_default/params.toml/social.twitter": {
+            "type": "string",
+            "title": "Twitter Username",
+            "description": "Your Twitter/X username (without @)"
+          }
+        }
+      },
+      "appearance": {
+        "type": "object",
+        "title": "Appearance & Branding",
+        "properties": {
+          "config/_default/params.toml/images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Default Social Images",
+            "description": "Default images used for social media sharing (Open Graph, Twitter Cards)",
+            "examples": [["cover.jpg"], ["images/social-preview.jpg"]]
+          },
+          "config/_default/params.toml/doks.colorMode": {
+            "type": "string",
+            "title": "Color Mode",
+            "description": "Default color scheme for the site",
+            "enum": ["auto", "light", "dark"],
+            "default": "auto"
+          },
+          "config/_default/params.toml/doks.colorModeToggler": {
+            "type": "boolean",
+            "title": "Show Color Mode Toggle",
+            "description": "Display color mode switcher (only relevant when colorMode is auto)",
+            "default": true
+          },
+          "config/_default/params.toml/doks.navbarSticky": {
+            "type": "boolean",
+            "title": "Sticky Navigation Bar",
+            "description": "Keep the navigation bar fixed at the top while scrolling",
+            "default": true
+          },
+          "config/_default/params.toml/doks.containerBreakpoint": {
+            "type": "string",
+            "title": "Container Breakpoint",
+            "description": "Bootstrap container breakpoint for responsive layout",
+            "enum": ["", "sm", "md", "lg", "xl", "xxl", "fluid"],
+            "default": "lg"
+          },
+          "config/_default/params.toml/doks.navBarButton": {
+            "type": "boolean",
+            "title": "Show Call-to-Action Button",
+            "description": "Display a CTA button in the navigation bar",
+            "default": false
+          },
+          "config/_default/params.toml/doks.navBarButtonUrl": {
+            "type": "string",
+            "title": "CTA Button URL",
+            "description": "URL for the navigation bar CTA button"
+          },
+          "config/_default/params.toml/doks.navBarButtonText": {
+            "type": "string",
+            "title": "CTA Button Text",
+            "description": "Text for the navigation bar CTA button"
+          },
+          "config/_default/params.toml/doks.backgroundDots": {
+            "type": "boolean",
+            "title": "Background Dots Pattern",
+            "description": "Enable or disable the decorative dot pattern in the background",
+            "default": true
+          },
+          "config/_default/params.toml/doks.headerBar": {
+            "type": "boolean",
+            "title": "Show Header Bar",
+            "description": "Display a header bar above the navigation",
+            "default": false
+          },
+          "config/_default/params.toml/doks.sectionNav": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Section Navigation",
+            "description": "Content sections that should display in-page navigation",
+            "default": ["docs"]
+          },
+          "config/_default/params.toml/doks.toTopButton": {
+            "type": "boolean",
+            "title": "Show 'To Top' Button",
+            "description": "Display a scroll-to-top button",
+            "default": false
+          },
+          "config/_default/params.toml/doks.breadcrumbTrail": {
+            "type": "boolean",
+            "title": "Show Breadcrumb Trail",
+            "description": "Display breadcrumb navigation",
+            "default": false
+          },
+          "config/_default/params.toml/doks.headlineHash": {
+            "type": "boolean",
+            "title": "Show Headline Anchors",
+            "description": "Display anchor links on headings",
+            "default": true
+          },
+          "config/_default/params.toml/doks.scrollSpy": {
+            "type": "boolean",
+            "title": "Enable Scroll Spy",
+            "description": "Highlight current section in table of contents while scrolling",
+            "default": true
+          },
+          "config/_default/params.toml/doks.sectionFooter": {
+            "type": "boolean",
+            "title": "Show Section Footer",
+            "description": "Display footer on homepage sections",
+            "default": false
+          }
+        }
+      },
+      "content": {
+        "type": "object",
+        "title": "Content Settings",
+        "properties": {
+          "config/_default/hugo.toml/pagination.pagerSize": {
+            "type": "integer",
+            "title": "Items Per Page",
+            "description": "Number of items to display per page in listings",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100
+          },
+          "config/_default/params.toml/doks.editPage": {
+            "type": "boolean",
+            "title": "Edit Page Links",
+            "description": "Show 'Edit this page' links on documentation pages",
+            "default": false
+          },
+          "config/_default/params.toml/doks.lastMod": {
+            "type": "boolean",
+            "title": "Show Last Modified Date",
+            "description": "Display the last modification date on pages",
+            "default": false
+          },
+          "config/_default/params.toml/doks.repoHost": {
+            "type": "string",
+            "title": "Repository Host",
+            "description": "Git hosting service for your project",
+            "enum": ["GitHub", "GitLab", "Bitbucket"],
+            "examples": ["GitHub"]
+          },
+          "config/_default/params.toml/doks.docsRepo": {
+            "type": "string",
+            "title": "Documentation Repository",
+            "description": "URL to your documentation repository",
+            "format": "uri",
+            "examples": ["https://github.com/username/repo"]
+          },
+          "config/_default/params.toml/doks.docsRepoBranch": {
+            "type": "string",
+            "title": "Repository Branch",
+            "description": "Branch name containing the documentation",
+            "examples": ["main", "master", "develop"],
+            "default": "main"
+          },
+          "config/_default/params.toml/doks.docsRepoSubPath": {
+            "type": "string",
+            "title": "Repository Sub-path",
+            "description": "Path within the repository to the documentation root",
+            "examples": ["", "docs/", "website/"]
+          },
+          "config/_default/params.toml/doks.multilingualMode": {
+            "type": "boolean",
+            "title": "Multilingual Mode",
+            "description": "Enable multilingual site features",
+            "default": false
+          },
+          "config/_default/params.toml/doks.showMissingLanguages": {
+            "type": "boolean",
+            "title": "Show Missing Languages",
+            "description": "Display untranslated languages in language menu",
+            "default": true
+          },
+          "config/_default/params.toml/doks.docsVersioning": {
+            "type": "boolean",
+            "title": "Enable Documentation Versioning",
+            "description": "Enable version selection for documentation",
+            "default": false
+          },
+          "config/_default/params.toml/doks.docsVersion": {
+            "type": "string",
+            "title": "Documentation Version",
+            "description": "Current documentation version number",
+            "default": "1.0"
+          },
+          "config/_default/params.toml/doks.relatedPosts": {
+            "type": "boolean",
+            "title": "Show Related Posts",
+            "description": "Display related posts on blog pages",
+            "default": false
+          },
+          "config/_default/params.toml/doks.imageList": {
+            "type": "boolean",
+            "title": "Show Images in Lists",
+            "description": "Display featured images in blog post lists",
+            "default": true
+          },
+          "config/_default/params.toml/doks.imageSingle": {
+            "type": "boolean",
+            "title": "Show Images on Single Pages",
+            "description": "Display featured images on single blog posts",
+            "default": true
+          },
+          "config/_default/params.toml/doks.krokiURL": {
+            "type": "string",
+            "title": "Kroki Diagram Service URL",
+            "description": "URL for Kroki diagram rendering service",
+            "default": "https://kroki.io",
+            "format": "uri"
+          },
+          "config/_default/params.toml/doks.bootstrapJavascript": {
+            "type": "boolean",
+            "title": "Enable Bootstrap JavaScript",
+            "description": "Load Bootstrap JavaScript components",
+            "default": false
+          }
+        }
+      },
+      "seo": {
+        "type": "object",
+        "title": "SEO & Meta",
+        "properties": {
+          "config/_default/hugo.toml/enableRobotsTXT": {
+            "type": "boolean",
+            "title": "Enable robots.txt",
+            "description": "Generate a robots.txt file for search engine crawlers",
+            "default": true
+          },
+          "config/_default/params.toml/seo.title.separator": {
+            "type": "string",
+            "title": "Title Separator",
+            "description": "Character(s) used to separate page titles from site title",
+            "examples": [" | ", " - ", " • "],
+            "default": " | "
+          },
+          "config/_default/params.toml/seo.title.suffix": {
+            "type": "string",
+            "title": "Title Suffix",
+            "description": "Text appended to page titles (typically empty for default site name)"
+          },
+          "config/_default/params.toml/seo.favicons.icon": {
+            "type": "string",
+            "title": "Favicon",
+            "description": "Path to favicon PNG file",
+            "default": "favicon.png"
+          },
+          "config/_default/params.toml/seo.favicons.svgIcon": {
+            "type": "string",
+            "title": "SVG Favicon",
+            "description": "Path to favicon SVG file",
+            "default": "favicon.svg"
+          },
+          "config/_default/params.toml/seo.favicons.maskIcon": {
+            "type": "string",
+            "title": "Safari Mask Icon",
+            "description": "Path to Safari pinned tab icon",
+            "default": "mask-icon.svg"
+          },
+          "config/_default/params.toml/seo.favicons.maskIconColor": {
+            "type": "string",
+            "title": "Mask Icon Color",
+            "description": "Color for Safari pinned tab icon",
+            "default": "white"
+          },
+          "config/_default/params.toml/seo.schemas.type": {
+            "type": "string",
+            "title": "Schema Type",
+            "description": "Structured data schema type for SEO",
+            "enum": ["Organization", "Person"],
+            "default": "Organization"
+          },
+          "config/_default/params.toml/seo.schemas.logo": {
+            "type": "string",
+            "title": "Schema Logo",
+            "description": "Logo image for structured data",
+            "default": "favicon-512x512.png"
+          },
+          "config/_default/params.toml/seo.schemas.name": {
+            "type": "string",
+            "title": "Organization/Person Name",
+            "description": "Name for structured data schema"
+          },
+          "config/_default/params.toml/seo.schemas.sameAs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Social Profile URLs",
+            "description": "List of social media profile URLs for structured data"
+          },
+          "config/_default/params.toml/seo.schemas.images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Schema Images",
+            "description": "Default images for structured data",
+            "default": ["cover.png"]
+          },
+          "config/_default/params.toml/seo.schemas.article": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Article Sections",
+            "description": "Sections treated as articles in structured data"
+          },
+          "config/_default/params.toml/seo.schemas.newsArticle": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "News Article Sections",
+            "description": "Sections treated as news articles"
+          },
+          "config/_default/params.toml/seo.schemas.blogPosting": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Blog Posting Sections",
+            "description": "Sections treated as blog posts",
+            "default": ["blog"]
+          },
+          "config/_default/params.toml/seo.schemas.product": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Product Sections",
+            "description": "Sections treated as products"
+          }
+        }
+      },
+      "search": {
+        "type": "object",
+        "title": "Search Configuration",
+        "properties": {
+          "config/_default/params.toml/doks.flexSearch": {
+            "type": "boolean",
+            "title": "Enable FlexSearch",
+            "description": "Enable built-in search functionality using FlexSearch",
+            "default": true
+          },
+          "config/_default/params.toml/doks.searchExclKinds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Exclude Content Kinds from Search",
+            "description": "Page kinds to exclude from search indexing (e.g., home, taxonomy, term)"
+          },
+          "config/_default/params.toml/doks.searchExclTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Exclude Content Types from Search",
+            "description": "Content types to exclude from search indexing (e.g., blog, legal)"
+          },
+          "config/_default/params.toml/doks.showSearch": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "title": "Show Search On",
+            "description": "Pages/sections where search should appear (empty = all pages)"
+          },
+          "config/_default/params.toml/doks.indexSummary": {
+            "type": "boolean",
+            "title": "Index Summary Only",
+            "description": "Index only page summaries instead of full content (faster loading)",
+            "default": false
+          },
+          "config/_default/params.toml/doks.showDate": {
+            "type": "boolean",
+            "title": "Show Date in Search Results",
+            "description": "Display publication date in search results",
+            "default": false
+          },
+          "config/_default/params.toml/doks.showSummary": {
+            "type": "boolean",
+            "title": "Show Summary in Search Results",
+            "description": "Display page summary in search results",
+            "default": true
+          },
+          "config/_default/params.toml/doks.searchLimit": {
+            "type": "integer",
+            "title": "Search Results Limit",
+            "description": "Maximum number of search results to display (0 = no limit)",
+            "default": 99,
+            "minimum": 0
+          }
+        }
+      },
+      "languages": {
+        "type": "object",
+        "title": "Language-Specific Settings",
+        "properties": {
+          "config/_default/languages.toml/en.params.languageISO": {
+            "type": "string",
+            "title": "Language ISO Code",
+            "description": "ISO language code (uppercase)",
+            "default": "EN"
+          },
+          "config/_default/languages.toml/en.params.languageTag": {
+            "type": "string",
+            "title": "Language Tag",
+            "description": "IETF language tag",
+            "default": "en-US"
+          },
+          "config/_default/languages.toml/en.params.footer": {
+            "type": "string",
+            "title": "Footer Text",
+            "description": "HTML content for the footer (language-specific)"
+          },
+          "config/_default/languages.toml/en.params.alertText": {
+            "type": "string",
+            "title": "Alert Text",
+            "description": "HTML content for the alert banner (language-specific)"
+          }
+        }
+      },
+      "navigation": {
+        "type": "object",
+        "title": "Navigation Menus",
+        "properties": {
+          "config/_default/menus/menus.en.toml/main": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Menu Item Name"
+                },
+                "url": {
+                  "type": "string",
+                  "title": "Menu Item URL"
+                },
+                "weight": {
+                  "type": "integer",
+                  "title": "Sort Order"
+                }
+              }
+            },
+            "title": "Main Navigation Menu",
+            "description": "Configure the main navigation menu items"
+          },
+          "config/_default/menus/menus.en.toml/social": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Social Platform Name"
+                },
+                "pre": {
+                  "type": "string",
+                  "title": "Icon SVG (before text)"
+                },
+                "url": {
+                  "type": "string",
+                  "title": "Social Profile URL"
+                },
+                "post": {
+                  "type": "string",
+                  "title": "Badge Text (after icon)"
+                },
+                "weight": {
+                  "type": "integer",
+                  "title": "Sort Order"
+                }
+              }
+            },
+            "title": "Social Media Links",
+            "description": "Configure social media links in the footer"
+          },
+          "config/_default/menus/menus.en.toml/footer": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "title": "Footer Link Name"
+                },
+                "url": {
+                  "type": "string",
+                  "title": "Footer Link URL"
+                },
+                "weight": {
+                  "type": "integer",
+                  "title": "Sort Order"
+                }
+              }
+            },
+            "title": "Footer Navigation",
+            "description": "Configure footer navigation links"
+          }
+        }
+      },
+      "advanced": {
+        "type": "object",
+        "title": "Advanced Settings",
+        "properties": {
+          "config/_default/params.toml/doks.alert": {
+            "type": "boolean",
+            "title": "Show Alert Banner",
+            "description": "Display an alert banner at the top of the site",
+            "default": false
+          },
+          "config/_default/params.toml/doks.alertDismissable": {
+            "type": "boolean",
+            "title": "Dismissable Alert",
+            "description": "Allow users to dismiss the alert banner",
+            "default": true
+          },
+          "config/_default/hugo.toml/enableEmoji": {
+            "type": "boolean",
+            "title": "Enable Emoji Support",
+            "description": "Enable emoji shortcodes in content",
+            "default": true
+          },
+          "config/_default/params.toml/thulite_images.defaults.decoding": {
+            "type": "string",
+            "title": "Image Decoding",
+            "description": "Image decoding mode",
+            "enum": ["sync", "async", "auto"],
+            "default": "async"
+          },
+          "config/_default/params.toml/thulite_images.defaults.fetchpriority": {
+            "type": "string",
+            "title": "Image Fetch Priority",
+            "description": "Priority for image loading",
+            "enum": ["high", "low", "auto"],
+            "default": "auto"
+          },
+          "config/_default/params.toml/thulite_images.defaults.loading": {
+            "type": "string",
+            "title": "Image Loading",
+            "description": "Image loading strategy",
+            "enum": ["eager", "lazy"],
+            "default": "lazy"
+          },
+          "config/_default/params.toml/thulite_images.defaults.sizes": {
+            "type": "string",
+            "title": "Image Sizes Attribute",
+            "description": "Sizes attribute for responsive images",
+            "default": "auto"
+          },
+          "config/_default/params.toml/thulite_images.defaults.lqip": {
+            "type": "string",
+            "title": "Low Quality Image Placeholder",
+            "description": "LQIP settings for progressive image loading",
+            "default": "16x webp q20"
+          },
+          "config/_default/params.toml/inline_svg.iconSetDir": {
+            "type": "string",
+            "title": "Icon Set Directory",
+            "description": "Directory containing SVG icons",
+            "default": "tabler-icons"
+          },
+          "config/_default/params.toml/render_hooks.image.errorLevel": {
+            "type": "string",
+            "title": "Image Render Error Level",
+            "description": "Error handling level for image rendering",
+            "enum": ["ignore", "warning", "error"],
+            "default": "ignore"
+          },
+          "config/_default/params.toml/render_hooks.link.errorLevel": {
+            "type": "string",
+            "title": "Link Render Error Level",
+            "description": "Error handling level for link rendering",
+            "enum": ["ignore", "warning", "error"],
+            "default": "ignore"
+          },
+          "config/_default/params.toml/render_hooks.link.highlightBroken": {
+            "type": "boolean",
+            "title": "Highlight Broken Links",
+            "description": "Visually highlight broken links",
+            "default": false
+          }
+        }
+      }
+    }
+  }

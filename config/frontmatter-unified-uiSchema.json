@@ -1,0 +1,238 @@
+{
+  "ui:order": [
+    "title",
+    "description",
+    "summary",
+    "date",
+    "lastmod",
+    "draft",
+    "basicSettings",
+    "blogSettings",
+    "docsSettings",
+    "seoSettings",
+    "advancedSettings"
+  ],
+  "ui:submitButtonOptions": {
+    "submitText": "Generate Frontmatter"
+  },
+  "title": {
+    "ui:autofocus": true,
+    "ui:placeholder": "Enter page title...",
+    "ui:help": "Required - the main title of your page"
+  },
+  "description": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Brief description for SEO and metadata...",
+    "ui:options": {
+      "rows": 2
+    },
+    "ui:help": "Used in search results and social previews"
+  },
+  "summary": {
+    "ui:widget": "textarea",
+    "ui:placeholder": "Short summary for card displays...",
+    "ui:options": {
+      "rows": 3
+    },
+    "ui:help": "Displayed on list pages and in blog cards"
+  },
+  "date": {
+    "ui:widget": "datetime",
+    "ui:help": "Publication date (auto-generated if empty)"
+  },
+  "lastmod": {
+    "ui:widget": "datetime",
+    "ui:help": "Last modification date"
+  },
+  "draft": {
+    "ui:widget": "radio",
+    "ui:help": "Set to false when ready to publish"
+  },
+  "basicSettings": {
+    "ui:title": "Basic Settings",
+    "ui:description": "Common settings for all content types",
+    "ui:options": {
+      "collapsed": false
+    },
+    "weight": {
+      "ui:widget": "updown",
+      "ui:help": "Lower numbers appear first in navigation (default: 999 for docs, 50 for blog)"
+    },
+    "type": {
+      "ui:widget": "select",
+      "ui:placeholder": "Select content type...",
+      "ui:help": "Determines which layout Hugo uses (leave empty for default)"
+    },
+    "lead": {
+      "ui:widget": "textarea",
+      "ui:placeholder": "Lead paragraph (supports HTML)...",
+      "ui:options": {
+        "rows": 2
+      },
+      "ui:help": "Displayed prominently below the title (mainly for homepage and section pages)"
+    }
+  },
+  "blogSettings": {
+    "ui:title": "Blog Post Settings",
+    "ui:description": "Settings specific to blog posts (leave empty if not a blog post)",
+    "ui:options": {
+      "collapsed": true
+    },
+    "categories": {
+      "ui:options": {
+        "orderable": true,
+        "addable": true,
+        "removable": true
+      },
+      "items": {
+        "ui:placeholder": "Category name"
+      },
+      "ui:help": "Primary categories for organizing blog posts"
+    },
+    "tags": {
+      "ui:options": {
+        "orderable": true,
+        "addable": true,
+        "removable": true
+      },
+      "items": {
+        "ui:placeholder": "Tag name"
+      },
+      "ui:help": "Keywords for content discovery"
+    },
+    "contributors": {
+      "ui:options": {
+        "orderable": true,
+        "addable": true,
+        "removable": true
+      },
+      "items": {
+        "ui:placeholder": "Author name"
+      },
+      "ui:help": "Author names (should match contributor taxonomy)"
+    },
+    "pinned": {
+      "ui:widget": "checkbox",
+      "ui:help": "Pin this post to the top of blog listings"
+    },
+    "homepage": {
+      "ui:widget": "checkbox",
+      "ui:help": "Feature this post on the homepage"
+    },
+    "images": {
+      "ui:options": {
+        "orderable": true
+      },
+      "items": {
+        "ui:placeholder": "feature-image.jpg"
+      },
+      "ui:help": "Featured images for social sharing"
+    }
+  },
+  "docsSettings": {
+    "ui:title": "Documentation Settings",
+    "ui:description": "Settings specific to documentation pages",
+    "ui:options": {
+      "collapsed": true
+    },
+    "toc": {
+      "ui:widget": "radio",
+      "ui:help": "Show/hide table of contents sidebar"
+    },
+    "aliases": {
+      "ui:options": {
+        "orderable": true
+      },
+      "items": {
+        "ui:placeholder": "/old-url/"
+      },
+      "ui:help": "Old URLs that should redirect to this page"
+    }
+  },
+  "seoSettings": {
+    "ui:title": "SEO & Search Settings",
+    "ui:description": "Override default SEO settings and control search visibility",
+    "ui:options": {
+      "collapsed": true
+    },
+    "seo": {
+      "ui:order": ["title", "description", "canonical", "noindex"],
+      "ui:description": "Custom SEO overrides for this page",
+      "title": {
+        "ui:placeholder": "Custom SEO title...",
+        "ui:help": "Leave empty to use page title"
+      },
+      "description": {
+        "ui:widget": "textarea",
+        "ui:placeholder": "Custom meta description...",
+        "ui:options": {
+          "rows": 2
+        },
+        "ui:help": "Recommended: 150-160 characters"
+      },
+      "canonical": {
+        "ui:placeholder": "https://example.com/canonical-url/",
+        "ui:help": "Set only if content is duplicated elsewhere"
+      },
+      "noindex": {
+        "ui:widget": "radio",
+        "ui:help": "Prevent search engines from indexing"
+      }
+    },
+    "exclude_search": {
+      "ui:widget": "checkbox",
+      "ui:help": "Exclude from site search"
+    },
+    "sitemap_exclude": {
+      "ui:widget": "checkbox",
+      "ui:help": "Exclude from sitemap.xml"
+    }
+  },
+  "advancedSettings": {
+    "ui:title": "Advanced Settings",
+    "ui:description": "Advanced Hugo features (for power users)",
+    "ui:options": {
+      "collapsed": true
+    },
+    "headline": {
+      "ui:placeholder": "Alternative headline...",
+      "ui:help": "Used instead of title on taxonomy/list pages"
+    },
+    "avatar": {
+      "ui:placeholder": "avatar.jpg",
+      "ui:help": "Avatar image filename (for contributor pages)"
+    },
+    "layout": {
+      "ui:placeholder": "single",
+      "ui:help": "Custom layout template override"
+    },
+    "outputs": {
+      "ui:widget": "checkboxes",
+      "ui:help": "Output formats to generate"
+    },
+    "cascade": {
+      "ui:widget": "textarea",
+      "ui:options": {
+        "rows": 3
+      },
+      "ui:help": "YAML object for cascading settings to child pages"
+    },
+    "resources": {
+      "ui:help": "Configure page bundle resources",
+      "items": {
+        "src": {
+          "ui:placeholder": "*.jpg"
+        },
+        "name": {
+          "ui:placeholder": "header"
+        },
+        "title": {
+          "ui:placeholder": "Header Image"
+        }
+      }
+    }
+  }
+}
+
+
+

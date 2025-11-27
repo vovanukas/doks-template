@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Doks Blog Post Frontmatter",
+  "description": "Frontmatter schema specifically for blog posts in Doks",
+  "required": ["title", "date"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Post Title",
+      "description": "The main title of your blog post",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "title": "Meta Description",
+      "description": "Brief description for SEO and social sharing"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Post Summary",
+      "description": "Short summary displayed on blog listing pages and cards"
+    },
+    "date": {
+      "type": "string",
+      "title": "Publication Date",
+      "description": "Date when the post was published",
+      "format": "date-time"
+    },
+    "lastmod": {
+      "type": "string",
+      "title": "Last Modified",
+      "description": "Date when the post was last updated",
+      "format": "date-time"
+    },
+    "draft": {
+      "type": "boolean",
+      "title": "Draft Status",
+      "description": "If true, post won't be published in production builds",
+      "default": false
+    },
+    "weight": {
+      "type": "integer",
+      "title": "Sort Weight",
+      "description": "Order weight for sorting (lower numbers appear first)",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 9999
+    },
+    "categories": {
+      "type": "array",
+      "title": "Categories",
+      "description": "Primary categories this post belongs to",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "tags": {
+      "type": "array",
+      "title": "Tags",
+      "description": "Tags for categorizing and discovering content",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "contributors": {
+      "type": "array",
+      "title": "Contributors",
+      "description": "Names of people who contributed to this post",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "default": []
+    },
+    "pinned": {
+      "type": "boolean",
+      "title": "Pin Post",
+      "description": "Pin this post to the top of blog listings",
+      "default": false
+    },
+    "homepage": {
+      "type": "boolean",
+      "title": "Feature on Homepage",
+      "description": "Show this post on the homepage",
+      "default": false
+    },
+    "images": {
+      "type": "array",
+      "title": "Social Images",
+      "description": "Featured images for social media sharing",
+      "items": {
+        "type": "string",
+        "pattern": "^.*\\.(jpg|jpeg|png|webp|gif)$"
+      }
+    },
+    "exclude_search": {
+      "type": "boolean",
+      "title": "Exclude from Search",
+      "description": "Don't include this post in search results",
+      "default": false
+    },
+    "seo": {
+      "type": "object",
+      "title": "SEO Overrides",
+      "description": "Advanced SEO configuration",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Custom SEO Title",
+          "description": "Override the post title for SEO (optional)"
+        },
+        "description": {
+          "type": "string",
+          "title": "Custom Meta Description",
+          "description": "Custom meta description for search engines",
+          "maxLength": 160
+        },
+        "canonical": {
+          "type": "string",
+          "title": "Canonical URL",
+          "description": "Canonical URL if content is published elsewhere",
+          "format": "uri"
+        },
+        "noindex": {
+          "type": "boolean",
+          "title": "No Index",
+          "description": "Prevent search engine indexing",
+          "default": false
+        }
+      }
+    }
+  }
+}
+
+
+

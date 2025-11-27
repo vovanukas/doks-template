@@ -1,0 +1,310 @@
+{
+    "_preserved": {
+      "ui:widget": "hidden"
+    },
+    "general": {
+      "ui:order": [
+        "config/_default/hugo.toml/title",
+        "config/_default/hugo.toml/baseurl",
+        "config/_default/params.toml/description",
+        "config/_default/params.toml/mainSections",
+        "config/_default/params.toml/social.twitter",
+        "config/_default/languages.toml/en.languageName",
+        "config/_default/languages.toml/en.contentDir",
+        "config/_default/languages.toml/en.weight"
+      ],
+      "ui:description": "Configure the basic information about your documentation site",
+      "config/_default/hugo.toml/title": {
+        "ui:placeholder": "My Documentation Site"
+      },
+      "config/_default/hugo.toml/baseurl": {
+        "ui:placeholder": "https://docs.example.com/"
+      },
+      "config/_default/params.toml/description": {
+        "ui:widget": "textarea",
+        "ui:placeholder": "Comprehensive documentation for our project...",
+        "ui:options": {
+          "rows": 3
+        }
+      },
+      "config/_default/params.toml/mainSections": {
+        "ui:placeholder": "docs",
+        "ui:help": "Primary content sections of your site"
+      },
+      "config/_default/params.toml/social.twitter": {
+        "ui:placeholder": "getdoks",
+        "ui:help": "Twitter/X username without @ symbol"
+      }
+    },
+    "appearance": {
+      "ui:order": [
+        "config/_default/params.toml/images",
+        "config/_default/params.toml/doks.colorMode",
+        "config/_default/params.toml/doks.colorModeToggler",
+        "config/_default/params.toml/doks.navbarSticky",
+        "config/_default/params.toml/doks.containerBreakpoint",
+        "config/_default/params.toml/doks.navBarButton",
+        "config/_default/params.toml/doks.navBarButtonUrl",
+        "config/_default/params.toml/doks.navBarButtonText",
+        "config/_default/params.toml/doks.backgroundDots",
+        "config/_default/params.toml/doks.headerBar",
+        "config/_default/params.toml/doks.sectionNav",
+        "config/_default/params.toml/doks.toTopButton",
+        "config/_default/params.toml/doks.breadcrumbTrail",
+        "config/_default/params.toml/doks.headlineHash",
+        "config/_default/params.toml/doks.scrollSpy",
+        "config/_default/params.toml/doks.sectionFooter"
+      ],
+      "ui:description": "Customize the visual appearance and branding of your documentation site",
+      "config/_default/params.toml/doks.colorMode": {
+        "ui:widget": "radio",
+        "ui:help": "Auto adapts to user's system preferences"
+      },
+      "config/_default/params.toml/doks.sectionNav": {
+        "ui:placeholder": "Enter section names (e.g., docs, guides)",
+        "ui:help": "Sections that should display in-page table of contents navigation"
+      },
+      "config/_default/params.toml/images": {
+        "ui:placeholder": "e.g., cover.jpg or images/social-preview.png",
+        "ui:help": "Images used for social media sharing previews"
+      }
+    },
+    "content": {
+      "ui:order": [
+        "config/_default/hugo.toml/pagination.pagerSize",
+        "config/_default/params.toml/doks.editPage",
+        "config/_default/params.toml/doks.lastMod",
+        "config/_default/params.toml/doks.repoHost",
+        "config/_default/params.toml/doks.docsRepo",
+        "config/_default/params.toml/doks.docsRepoBranch",
+        "config/_default/params.toml/doks.docsRepoSubPath",
+        "config/_default/params.toml/doks.multilingualMode",
+        "config/_default/params.toml/doks.showMissingLanguages",
+        "config/_default/params.toml/doks.docsVersioning",
+        "config/_default/params.toml/doks.docsVersion",
+        "config/_default/params.toml/doks.relatedPosts",
+        "config/_default/params.toml/doks.imageList",
+        "config/_default/params.toml/doks.imageSingle",
+        "config/_default/params.toml/doks.krokiURL",
+        "config/_default/params.toml/doks.bootstrapJavascript"
+      ],
+      "ui:description": "Configure content display and repository integration",
+      "config/_default/hugo.toml/pagination.pagerSize": {
+        "ui:widget": "updown"
+      },
+      "config/_default/params.toml/doks.repoHost": {
+        "ui:widget": "select"
+      },
+      "config/_default/params.toml/doks.docsRepo": {
+        "ui:placeholder": "https://github.com/username/repository",
+        "ui:help": "Full URL to your documentation repository"
+      },
+      "config/_default/params.toml/doks.docsRepoBranch": {
+        "ui:placeholder": "main"
+      },
+      "config/_default/params.toml/doks.docsRepoSubPath": {
+        "ui:placeholder": "Leave empty if docs are in repository root",
+        "ui:help": "Path within repository to documentation folder (e.g., 'docs/')"
+      }
+    },
+    "seo": {
+      "ui:order": [
+        "config/_default/hugo.toml/enableRobotsTXT",
+        "config/_default/params.toml/seo.title.separator",
+        "config/_default/params.toml/seo.title.suffix",
+        "config/_default/params.toml/seo.favicons.icon",
+        "config/_default/params.toml/seo.favicons.svgIcon",
+        "config/_default/params.toml/seo.favicons.maskIcon",
+        "config/_default/params.toml/seo.favicons.maskIconColor",
+        "config/_default/params.toml/seo.schemas.type",
+        "config/_default/params.toml/seo.schemas.name",
+        "config/_default/params.toml/seo.schemas.logo",
+        "config/_default/params.toml/seo.schemas.sameAs",
+        "config/_default/params.toml/seo.schemas.images",
+        "config/_default/params.toml/seo.schemas.article",
+        "config/_default/params.toml/seo.schemas.newsArticle",
+        "config/_default/params.toml/seo.schemas.blogPosting",
+        "config/_default/params.toml/seo.schemas.product"
+      ],
+      "ui:description": "Optimize your site for search engines and configure SEO settings",
+      "config/_default/params.toml/seo.title.separator": {
+        "ui:placeholder": " | ",
+        "ui:help": "Character displayed between page title and site name in browser tabs"
+      },
+      "config/_default/params.toml/seo.title.suffix": {
+        "ui:placeholder": "",
+        "ui:help": "Text added to all page titles (leave empty to use site title)"
+      },
+      "config/_default/params.toml/seo.schemas.type": {
+        "ui:widget": "radio"
+      },
+      "config/_default/params.toml/seo.schemas.sameAs": {
+        "ui:placeholder": "https://github.com/yourusername",
+        "ui:help": "List of your social media profile URLs for structured data"
+      }
+    },
+    "search": {
+      "ui:order": [
+        "config/_default/params.toml/doks.flexSearch",
+        "config/_default/params.toml/doks.searchExclKinds",
+        "config/_default/params.toml/doks.searchExclTypes",
+        "config/_default/params.toml/doks.showSearch",
+        "config/_default/params.toml/doks.indexSummary",
+        "config/_default/params.toml/doks.showDate",
+        "config/_default/params.toml/doks.showSummary",
+        "config/_default/params.toml/doks.searchLimit"
+      ],
+      "ui:description": "Configure the built-in search functionality powered by FlexSearch",
+      "config/_default/params.toml/doks.searchExclKinds": {
+        "ui:placeholder": "home, taxonomy, term",
+        "ui:help": "Page kinds to exclude from search indexing"
+      },
+      "config/_default/params.toml/doks.searchExclTypes": {
+        "ui:placeholder": "blog, legal",
+        "ui:help": "Content types to exclude from search indexing"
+      },
+      "config/_default/params.toml/doks.showSearch": {
+        "ui:placeholder": "homepage, docs",
+        "ui:help": "Leave empty to show search on all pages"
+      },
+      "config/_default/params.toml/doks.searchLimit": {
+        "ui:widget": "updown",
+        "ui:help": "Set to 0 for no limit"
+      }
+    },
+    "languages": {
+      "ui:order": [
+        "config/_default/languages.toml/en.params.languageISO",
+        "config/_default/languages.toml/en.params.languageTag",
+        "config/_default/languages.toml/en.params.footer",
+        "config/_default/languages.toml/en.params.alertText"
+      ],
+      "ui:description": "Configure language-specific settings for multilingual sites",
+      "config/_default/languages.toml/en.params.footer": {
+        "ui:widget": "textarea",
+        "ui:placeholder": "Brought to you by <a href='https://example.com'>Example</a>",
+        "ui:options": {
+          "rows": 2
+        },
+        "ui:help": "HTML content for the footer (language-specific)"
+      },
+      "config/_default/languages.toml/en.params.alertText": {
+        "ui:widget": "textarea",
+        "ui:placeholder": "<a class='alert-link' href='/blog/'>Check out our latest post!</a>",
+        "ui:options": {
+          "rows": 2
+        },
+        "ui:help": "HTML content for alert banner (language-specific)"
+      }
+    },
+    "navigation": {
+      "ui:description": "Configure navigation menus throughout your site",
+      "config/_default/menus/menus.en.toml/main": {
+        "ui:help": "Main navigation menu displayed in the header",
+        "items": {
+          "name": {
+            "ui:placeholder": "Documentation"
+          },
+          "url": {
+            "ui:placeholder": "/docs/"
+          },
+          "weight": {
+            "ui:widget": "updown",
+            "ui:help": "Lower numbers appear first"
+          }
+        }
+      },
+      "config/_default/menus/menus.en.toml/social": {
+        "ui:help": "Social media links displayed in the footer",
+        "items": {
+          "name": {
+            "ui:placeholder": "GitHub"
+          },
+          "pre": {
+            "ui:widget": "textarea",
+            "ui:placeholder": "<svg>...</svg>",
+            "ui:help": "Full SVG markup for the social media icon",
+            "ui:options": {
+              "rows": 3
+            }
+          },
+          "url": {
+            "ui:placeholder": "https://github.com/username"
+          },
+          "post": {
+            "ui:placeholder": "v1.0.0",
+            "ui:help": "Optional badge text displayed after the icon (e.g., version number)"
+          },
+          "weight": {
+            "ui:widget": "updown",
+            "ui:help": "Lower numbers appear first"
+          }
+        }
+      },
+      "config/_default/menus/menus.en.toml/footer": {
+        "ui:help": "Additional navigation links in the footer",
+        "items": {
+          "name": {
+            "ui:placeholder": "Privacy Policy"
+          },
+          "url": {
+            "ui:placeholder": "/privacy/"
+          }
+        }
+      }
+    },
+    "advanced": {
+      "ui:order": [
+        "config/_default/hugo.toml/enableEmoji",
+        "config/_default/params.toml/doks.alert",
+        "config/_default/params.toml/doks.alertDismissable",
+        "config/_default/params.toml/thulite_images.defaults.decoding",
+        "config/_default/params.toml/thulite_images.defaults.fetchpriority",
+        "config/_default/params.toml/thulite_images.defaults.loading",
+        "config/_default/params.toml/thulite_images.defaults.sizes",
+        "config/_default/params.toml/thulite_images.defaults.lqip",
+        "config/_default/params.toml/inline_svg.iconSetDir",
+        "config/_default/params.toml/render_hooks.image.errorLevel",
+        "config/_default/params.toml/render_hooks.link.errorLevel",
+        "config/_default/params.toml/render_hooks.link.highlightBroken"
+      ],
+      "ui:description": "Advanced configuration options for power users",
+      "config/_default/params.toml/thulite_images.defaults.decoding": {
+        "ui:widget": "radio"
+      },
+      "config/_default/params.toml/thulite_images.defaults.fetchpriority": {
+        "ui:widget": "radio"
+      },
+      "config/_default/params.toml/thulite_images.defaults.loading": {
+        "ui:widget": "radio"
+      },
+      "config/_default/params.toml/thulite_images.defaults.sizes": {
+        "ui:placeholder": "auto",
+        "ui:help": "CSS sizes attribute for responsive images"
+      },
+      "config/_default/params.toml/thulite_images.defaults.lqip": {
+        "ui:placeholder": "16x webp q20",
+        "ui:help": "Low quality image placeholder configuration"
+      },
+      "config/_default/params.toml/render_hooks.image.errorLevel": {
+        "ui:widget": "radio"
+      },
+      "config/_default/params.toml/render_hooks.link.errorLevel": {
+        "ui:widget": "radio"
+      }
+    },
+    "ui:order": [
+      "_preserved",
+      "general",
+      "appearance",
+      "content",
+      "search",
+      "seo",
+      "languages",
+      "navigation",
+      "advanced"
+    ],
+    "ui:submitButtonOptions": {
+      "norender": true
+    }
+  }
