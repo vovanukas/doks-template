@@ -54,8 +54,17 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Get GitHub Pages URL
+        id: pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
+          echo "base_url=$url" >> $GITHUB_OUTPUT
+          echo "GitHub Pages URL: $url"
+
       - name: Build with Hugo
-        run: hugo --minify
+        run: bun run build -- --baseURL ${{ steps.pages.outputs.base_url }}
 
       # Combined step: Upload artifact (required by deploy-pages)
       - name: Upload artifact
