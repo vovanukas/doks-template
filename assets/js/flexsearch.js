@@ -114,17 +114,7 @@ import Index from 'flexsearch';
   function buildIndex() {
     document.querySelector('.search-loading').classList.remove('d-none');
 
-    // FIX: Use a relative path for fetching the search index
-    // The original code used: "{{ site.LanguagePrefix }}/search-index.json"
-    // which resolves to "/search-index.json" (absolute from root) when site.LanguagePrefix is empty.
-
-    // Using "search-index.json" (no leading slash) makes it relative to the current page.
-    // However, if we are on a deeper page, it might fail.
-
-    // The most robust way for Hugo + Subdirectories is often to let Hugo inject the full RelPermalink:
-    const searchIndexPath = "{{ "search-index.json" | relURL }}";
-
-    fetch(searchIndexPath)
+    fetch("{{ relLangURL "search-index.json" }}")
       .then(function (response) {
         return response.json();
       })
