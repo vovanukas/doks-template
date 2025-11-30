@@ -1,1 +1,30 @@
 // Put your custom SCSS code here
+
+// Fix for Task Lists: Remove the default bullet point
+.task-list-item {
+  list-style-type: none;
+
+  // Ensure the checkbox is correctly spaced
+  input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+}
+
+// Fix for lists inside centered containers (like the homepage hero or centered sections)
+// This makes the list block centered, but the text inside left-aligned
+.text-center, .home-content {
+  ul, ol {
+    &.task-list {
+      // Task lists specifically should probably be centered blocks
+      display: inline-block;
+      text-align: left;
+      padding-left: 0; // Remove default padding for task lists
+    }
+
+    // General lists
+    &:not(.task-list) {
+      display: inline-block;
+      text-align: left;
+    }
+  }
+}
