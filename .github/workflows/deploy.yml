@@ -84,7 +84,7 @@ jobs:
           webhook_url: ${{ secrets.CONVEX_SITE_URL }}/callbackPageDeployed
           webhook_auth_type: bearer
           webhook_auth: ${{ secrets.CALLBACK_BEARER }}
-          data: '{ "buildStatus": "BUILT", "publishStatus": "PUBLISHED" }'
+          data: '{ "buildStatus": "BUILT", "publishStatus": "PUBLISHED", "pageUrl": "${{ steps.pages.outputs.base_url }}" }'
 
       - name: Notify on failure
         if: failure()
@@ -93,4 +93,4 @@ jobs:
           webhook_url: ${{ secrets.CONVEX_SITE_URL }}/callbackPageDeployed
           webhook_auth_type: bearer
           webhook_auth: ${{ secrets.CALLBACK_BEARER }}
-          data: '{ "buildStatus": "BUILT", "publishStatus": "ERROR" }'
+          data: '{ "buildStatus": "BUILT", "publishStatus": "ERROR", "pageUrl": "${{ steps.pages.outputs.base_url }}" }'
