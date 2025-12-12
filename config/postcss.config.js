@@ -1,11 +1,11 @@
 const autoprefixer = require('autoprefixer');
-const { purgeCSSPlugin } = require('@fullhuman/postcss-purgecss');
+const purgecss = require('@fullhuman/postcss-purgecss');
 const whitelister = require('purgecss-whitelister');
 
 module.exports = {
     plugins: [
         autoprefixer(),
-        purgeCSSPlugin({
+        purgecss({
             content: ['./hugo_stats.json'],
             extractors: [
                 {
