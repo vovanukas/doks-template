@@ -24,73 +24,11 @@ permissions:
 
 env:
   HUGO_ENV: production
-  HUGO_VERSION: "0.148.1"
-  NODE_VERSION: "22"
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v1
-        with:
-          bun-version: latest
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: ${{ env.HUGO_VERSION }}
-          extended: true
-
-      - name: Install dependencies
-        run: bun install
-
-      - name: Get GitHub Pages URL
-        id: pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          url=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.html_url')
-          echo "base_url=$url" >> $GITHUB_OUTPUT
-          echo "GitHub Pages URL: $url"
-
-      - name: Build with Hugo
-        run: bun run build -- --baseURL ${{ steps.pages.outputs.base_url }}
-
-      # Combined step: Upload artifact (required by deploy-pages)
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./public
-
-      # Combined step: Deploy immediately in the same job
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      - name: Notify on success
-        if: success()
-        uses: distributhor/workflow-webhook@v3
-        with:
-          webhook_url: ${{ secrets.CONVEX_SITE_URL }}/callbackPageDeployed
-          webhook_auth_type: bearer
-          webhook_auth: ${{ secrets.CALLBACK_BEARER }}
-          data: '{ "buildStatus": "BUILT", "publishStatus": "PUBLISHED", "pageUrl": "${{ steps.pages.outputs.base_url }}" }'
-
-      - name: Notify on failure
-        if: failure()
-        uses: distributhor/workflow-webhook@v3
-        with:
-          webhook_url: ${{ secrets.CONVEX_SITE_URL }}/callbackPageDeployed
-          webhook_auth_type: bearer
-          webhook_auth: ${{ secrets.CALLBACK_BEARER }}
-          data: '{ "buildStatus": "BUILT", "publishStatus": "ERROR", "pageUrl": "${{ steps.pages.outputs.base_url }}" }'
+    uses: vovanukas/doks-core/.github/workflows/deploy.yml@v0.1.1
+    with:
+      hugo_version: "0.148.1"
+      node_version: "22"
+    secrets: inherit
