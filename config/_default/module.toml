@@ -1,6 +1,29 @@
-[[imports]]
-  path = "github.com/vovanukas/doks-core"
+# Mount theme from node_modules (installed via npm/bun)
+[[mounts]]
+  source = "node_modules/doks-core/archetypes"
+  target = "archetypes"
 
+[[mounts]]
+  source = "node_modules/doks-core/assets"
+  target = "assets"
+
+[[mounts]]
+  source = "node_modules/doks-core/data"
+  target = "data"
+
+[[mounts]]
+  source = "node_modules/doks-core/i18n"
+  target = "i18n"
+
+[[mounts]]
+  source = "node_modules/doks-core/layouts"
+  target = "layouts"
+
+[[mounts]]
+  source = "node_modules/doks-core/static"
+  target = "static"
+
+# Local overrides (template's own content)
 [[mounts]]
   source = "content"
   target = "content"
