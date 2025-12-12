@@ -28,7 +28,6 @@ env:
 jobs:
   deploy:
     uses: vovanukas/doks-core/.github/workflows/deploy.yml@v0.1.1
-    with:
-      hugo_version: "0.148.1"
-      node_version: "22"
-    secrets: inherit
+    secrets:
+      CONVEX_SITE_URL: ${{ secrets.CONVEX_SITE_URL }}
+      CALLBACK_BEARER: ${{ secrets.CALLBACK_BEARER }}
